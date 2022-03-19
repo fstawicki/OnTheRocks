@@ -1,0 +1,15 @@
+.navbar{
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 2px solid orange;
+}
+
+.navbar__logo{
+  height: 200px;
+  width: 200px;
+  background-color: #fff;
+}
+
+
