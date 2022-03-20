@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import {Switch, Route} from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import Details from "./pages/Details"
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <div>404</div>
         </Route>
       </Switch>
+      <Footer/>
 
 
     </div>
