@@ -8,15 +8,56 @@ function Search() {
 
   const searchbarHandler = (e) => {
     setSearchbar(e.target.value);
-    console.log(searchbar)
   }
+
+  
 
 
   const submitHandler = (e) => {
     e.preventDefault();
 
+    if(searchbar === '' || searchbar === null){
+      alert('enter drink name');
+      return;
+    }
 
-    console.log(searchbar);
+  //   , {
+  //     "method": "GET",
+  //     "headers": {
+  //     'Content-Type': 'application/json',
+  //     "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+  //     "x-rapidapi-key": "0e080c7fe2mshbaae96571089130p16a7bbjsn016819b32a15"
+  //   }
+  // }
+
+//RANDOM DRINK
+    // fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php').then(response => {
+    //   if(response.status !== 200){
+    //     console.log('spierdolone');
+    //     return;
+    //   }
+    //   return response.json();
+    // }).then(data => {
+    //   console.log(data);
+    // }).catch(error => {
+    //   console.error(error);
+    // });
+
+    
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchbar}`).then(response => {
+        if(response.status !== 200){
+          console.log('spierdolone');
+          return;
+        }
+        return response.json();
+      }).then(data => {
+        const resultArray = data.drinks.map(item => {
+          return console.log(item.strDrink);
+        })
+      }).catch(error => {
+        console.error(error);
+      });
+
     setSearchbar('');
   }
 
