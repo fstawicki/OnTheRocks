@@ -2,6 +2,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     margin: 3rem 0;
 }
@@ -9,7 +11,7 @@
 
 
 .search__form{
-
+    
 }
 
 .search__searchbar{
@@ -35,4 +37,10 @@
 .search__searchbtn:hover{
     background-color: rgb(167, 113, 14);
     border: 1px solid rgb(167, 113, 14);
+}
+
+
+.search__loadingText{
+    margin-top: 2rem;
+    color: #ffa500;
 }

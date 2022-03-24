@@ -3,6 +3,9 @@ import styles from './Cocktails.module.css';
 import {Link} from 'react-router-dom';
 import image from '../images/pobrane.jpg'
 
+
+
+
 function Cocktail(props) {
   return (
     <div className={styles.cocktail}>
