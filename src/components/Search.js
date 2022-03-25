@@ -6,12 +6,18 @@ function Search(props) {
 
   const [searchbar,setSearchbar] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  let drinksArray = [];
+  const [isClicked, setIsClicked] = useState(false);
+  
 
 
   const searchbarHandler = (e) => {
     setSearchbar(e.target.value);
   }
+
+  const buttonHandler = () => {
+    setIsClicked(true);
+  }
+
 
 
   async function submitHandler(e){
@@ -22,9 +28,10 @@ function Search(props) {
       return;
     }
       const data = await response.json();
-      drinksArray = data.drinks;
+      let drinksArray = data.drinks;
       
-  props.sendDrinks(drinksArray);
+      props.sendClick(isClicked);
+      props.sendDrinks(drinksArray);
       
   }
 
@@ -34,7 +41,7 @@ function Search(props) {
     <div className={styles.search}>
         <form className={styles.search__form} onSubmit={submitHandler}>
         <input type="text" className={styles.search__searchbar} onChange={searchbarHandler} value={searchbar} />
-        <button type="submit" className={styles.search__searchbtn}>Search</button>
+        <button type="submit" className={styles.search__searchbtn} onClick={buttonHandler}>Search</button>
         </form>
         {isLoading && <div className={styles.search__loadingText}><p>Searching, please wait...</p></div>}
 
