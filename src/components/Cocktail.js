@@ -40,6 +40,23 @@ function Cocktail(props) {
       props.measure13, 
       props.measure14,
       props.measure15];
+  
+    let ingredientsw = 
+  [{props.ing1, props.measure1},
+    props.ing2, 
+    props.ing3, 
+    props.ing4, 
+    props.ing5, 
+    props.ing6, 
+    props.ing7, 
+    props.ing8, 
+    props.ing9, 
+    props.ing10, 
+    props.ing11, 
+    props.ing12, 
+    props.ing13, 
+    props.ing14,
+    props.ing15];
 
 
   return (
