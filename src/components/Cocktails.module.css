@@ -11,7 +11,7 @@
 .cocktail__image{
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-clip: border-box;
     width: 25%;
     max-width: 400px;
@@ -36,14 +36,26 @@
     font-size: 1.4rem;
     margin-bottom: 0.7rem;
     color: #3f7273;
+    
 }
 
 .cocktail__ingredients{
     color: white;
     font-size: 1.1rem;
     list-style: none;
-    margin-left: 0.5rem;
+    
 }
+
+.cocktail__ingredients li{
+    border-bottom: 1px solid #3f7273;
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cocktail__ingredients__measure{
+}
+
 .cocktail__btndiv{
     width: 15%;
     display: flex;

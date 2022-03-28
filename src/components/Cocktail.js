@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom';
 
 function Cocktail(props) {
 
-  let imageStyle = `backgroundImage: url(${props.image})`;
-
   let ingredients = 
   [props.ing1, 
     props.ing2, 
@@ -41,22 +39,32 @@ function Cocktail(props) {
       props.measure14,
       props.measure15];
   
-    let ingredientsw = 
-  [{props.ing1, props.measure1},
-    props.ing2, 
-    props.ing3, 
-    props.ing4, 
-    props.ing5, 
-    props.ing6, 
-    props.ing7, 
-    props.ing8, 
-    props.ing9, 
-    props.ing10, 
-    props.ing11, 
-    props.ing12, 
-    props.ing13, 
-    props.ing14,
-    props.ing15];
+      let drinksArray = [
+        {ing: props.ing1, meas: props.measure1},
+        {ing: props.ing2, meas: props.measure2},
+        {ing: props.ing3, meas: props.measure3},
+        {ing: props.ing4, meas: props.measure4},
+        {ing: props.ing5, meas: props.measure5},
+        {ing: props.ing6, meas: props.measure6},
+        {ing: props.ing7, meas: props.measure7},
+        {ing: props.ing8, meas: props.measure8},
+        {ing: props.ing9, meas: props.measure9},
+        {ing: props.ing10, meas: props.measure10},
+        {ing: props.ing11, meas: props.measure11},
+        {ing: props.ing12, meas: props.measure12},
+        {ing: props.ing13, meas: props.measure13},
+        {ing: props.ing14, meas: props.measure14},
+        {ing: props.ing15, meas: props.measure15},
+      ];
+
+      drinksArray.map((drink) => {
+        if(drink.ing === ""){
+          drink.ing = null;
+        }
+        if(drink.meas === ""){
+          drink.meas = null;
+        }
+      });
 
 
   return (
@@ -69,9 +77,9 @@ function Cocktail(props) {
         <h2 className={styles.cocktail__title}>{props.name}</h2>
         <h2 className={styles.cocktail__infotitle}>Ingredients:</h2>
         <ul className={styles.cocktail__ingredients}>{
-          ingredients.map((ing) => {
-            if(ing !== null){
-              return <li>{ing}</li>
+          drinksArray.map((drink) => {
+            if(drink.ing !== null){
+              return <li>{drink.ing}<span className={styles.cocktail__ingredients__measure}>{drink.meas}</span></li>
             }
           })
         }
