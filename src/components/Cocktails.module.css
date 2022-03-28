@@ -52,7 +52,7 @@
 .cocktail__ingredients li{
     border-bottom: 1px solid #3f7273;
     margin-top: 0.1rem;
-    width: 45%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }

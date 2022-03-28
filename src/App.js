@@ -13,7 +13,7 @@ function App() {
         <Route path={'/'}exact>
           <MainPage /> 
         </Route>
-        <Route path={'/details/:drinkName'}>
+        <Route path={'/details/:drinkID'}>
           <Details />
         </Route>
         <Route path={'/*'}>

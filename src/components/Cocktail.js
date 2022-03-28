@@ -36,20 +36,26 @@ function Cocktail(props) {
 
       const sendDetails = (e) => {
         e.preventDefault();
-        console.log('aaa');
-
+        let drinkName;
+        let parent = e.target.parentElement.parentElement;
+        if(parent.classList.contains(`${styles.cocktail}`)){
+          console.log(parent.id);
+          drinkName = parent.id;
+          console.log(drinkName);
+        }
+        
 
       }
 
 
   return (
-    <div className={styles.cocktail}>
+    <div className={styles.cocktail} id={props.name}>
       <div className={styles.cocktail__image} style={{
         backgroundImage: `url(${props.image})`
       }}>
       </div>
       <div className={styles.cocktail__info}>
-        <h2 className={styles.cocktail__title}>{props.name}</h2>
+        <h2  id={props.name} className={styles.cocktail__title}>{props.name}</h2>
         <h2 className={styles.cocktail__infotitle}>Ingredients:</h2>
         <ul className={styles.cocktail__ingredients}>{
           drinksArray.map((drink) => {
