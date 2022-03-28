@@ -5,39 +5,6 @@ import {Link} from 'react-router-dom';
 
 function Cocktail(props) {
 
-  let ingredients = 
-  [props.ing1, 
-    props.ing2, 
-    props.ing3, 
-    props.ing4, 
-    props.ing5, 
-    props.ing6, 
-    props.ing7, 
-    props.ing8, 
-    props.ing9, 
-    props.ing10, 
-    props.ing11, 
-    props.ing12, 
-    props.ing13, 
-    props.ing14,
-    props.ing15];
-
-    let measures = 
-    [props.measure1, 
-      props.measure2, 
-      props.measure3, 
-      props.measure4, 
-      props.measure5, 
-      props.measure6, 
-      props.measure7, 
-      props.measure8, 
-      props.measure9, 
-      props.measure10, 
-      props.measure11, 
-      props.measure12, 
-      props.measure13, 
-      props.measure14,
-      props.measure15];
   
       let drinksArray = [
         {ing: props.ing1, meas: props.measure1},
@@ -64,7 +31,15 @@ function Cocktail(props) {
         if(drink.meas === ""){
           drink.meas = null;
         }
+        return drinksArray;
       });
+
+      const sendDetails = (e) => {
+        e.preventDefault();
+        console.log('aaa');
+
+
+      }
 
 
   return (
@@ -86,7 +61,7 @@ function Cocktail(props) {
         </ul>
       </div>
       <div className={styles.cocktail__btndiv}>
-        <Link className={styles.cocktail__detailsbtn}>Details</Link>
+        <Link onClick={sendDetails} to="/Details/" className={styles.cocktail__detailsbtn}>Details</Link>
       </div>
     </div>
   )
@@ -96,3 +71,37 @@ function Cocktail(props) {
 
 export default Cocktail;
 
+
+// let ingredients = 
+// [props.ing1, 
+//   props.ing2, 
+//   props.ing3, 
+//   props.ing4, 
+//   props.ing5, 
+//   props.ing6, 
+//   props.ing7, 
+//   props.ing8, 
+//   props.ing9, 
+//   props.ing10, 
+//   props.ing11, 
+//   props.ing12, 
+//   props.ing13, 
+//   props.ing14,
+//   props.ing15];
+
+//   let measures = 
+//   [props.measure1, 
+//     props.measure2, 
+//     props.measure3, 
+//     props.measure4, 
+//     props.measure5, 
+//     props.measure6, 
+//     props.measure7, 
+//     props.measure8, 
+//     props.measure9, 
+//     props.measure10, 
+//     props.measure11, 
+//     props.measure12, 
+//     props.measure13, 
+//     props.measure14,
+//     props.measure15];

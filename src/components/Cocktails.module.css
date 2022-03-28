@@ -3,7 +3,7 @@
     flex-direction: row;
     border: 2px solid orange;
     margin-bottom: 2rem;
-    height: 300px;
+    min-height: 300px;
     width: 100%;
     font-family: 'Now';
 }
@@ -14,6 +14,7 @@
     background-size: cover;
     background-clip: border-box;
     width: 25%;
+    min-height: 300px;
     max-width: 400px;
     height: 100%;
 
