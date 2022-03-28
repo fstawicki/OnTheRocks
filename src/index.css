@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: 'now';
+  src: local('now-regular'), url('./assets/now-regular.otf') format('opentype');
+}
+
 html{
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;

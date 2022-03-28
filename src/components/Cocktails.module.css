@@ -5,7 +5,7 @@
     margin-bottom: 2rem;
     height: 300px;
     width: 100%;
-
+    font-family: 'Now';
 }
 
 .cocktail__image{
@@ -30,6 +30,8 @@
     margin-bottom: 1.2rem;
     font-size: 2.4rem;
     color: orange;
+    
+    text-transform: uppercase;
 }
 
 .cocktail__infotitle{
@@ -48,6 +50,7 @@
 
 .cocktail__ingredients li{
     border-bottom: 1px solid #3f7273;
+    margin-top: 0.1rem;
     width: 45%;
     display: flex;
     justify-content: space-between;
@@ -64,6 +67,7 @@
 }
 .cocktail__detailsbtn{
     text-decoration: none;
+    text-transform: uppercase;
     color: black;
     padding: 1rem 2rem;
     border: 1px solid black;

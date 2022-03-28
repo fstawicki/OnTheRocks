@@ -30,6 +30,10 @@ function MainPage() {
               key={drink.strDrink}
               name={drink.strDrink}
               image={drink.strImageSource}
+              isAlcoholic={drink.strAlcoholic}
+              category={drink.strCategory}
+              glass={drink.strGlass}
+              instruction={drink.strInstructions}
               ing1={drink.strIngredient1}
               ing2={drink.strIngredient2}
               ing3={drink.strIngredient3}
