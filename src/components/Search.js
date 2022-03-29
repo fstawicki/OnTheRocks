@@ -37,7 +37,6 @@ function Search(props) {
 
 
   return (
-    <Fragment>
     <div className={styles.search}>
         <form className={styles.search__form} onSubmit={submitHandler}>
         <input type="text" className={styles.search__searchbar} onChange={searchbarHandler} value={searchbar} />
@@ -46,8 +45,6 @@ function Search(props) {
         {isLoading && <div className={styles.search__loadingText}><p>Searching, please wait...</p></div>}
 
     </div>
-    
-    </Fragment>
   )
 }
 

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Cocktails.module.css';
 import {Link} from 'react-router-dom';
 
 
 function Cocktail(props) {
 
+  let drinkName;
+  const [showDetail,setShowDetail] = useState(false);
   
       let drinksArray = [
         {ing: props.ing1, meas: props.measure1},
@@ -34,19 +36,17 @@ function Cocktail(props) {
         return drinksArray;
       });
 
-      const sendDetails = (e) => {
+      const viewDetails = (e) => {
         e.preventDefault();
-        let drinkName;
         let parent = e.target.parentElement.parentElement;
         if(parent.classList.contains(`${styles.cocktail}`)){
           console.log(parent.id);
           drinkName = parent.id;
           console.log(drinkName);
         }
-        
-
       }
 
+      
 
   return (
     <div className={styles.cocktail} id={props.name}>
@@ -67,7 +67,8 @@ function Cocktail(props) {
         </ul>
       </div>
       <div className={styles.cocktail__btndiv}>
-        <Link onClick={sendDetails} to="/Details/" className={styles.cocktail__detailsbtn}>Details</Link>
+        <button onClick={viewDetails} className={styles.cocktail__detailsbtn}>Details</button>
+        {/* <Link onClick={sendDetails} drinkName={drinkName} to="/Details/" className={styles.cocktail__detailsbtn}>Details</Link> */}
       </div>
     </div>
   )
