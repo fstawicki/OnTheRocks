@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Cocktail from '../components/Cocktail';
 import Search from '../components/Search';
+import DrinksContext from '../context/drinks-context';
 
 import styles from './MainPage.module.css'
 
@@ -10,23 +11,18 @@ function MainPage() {
   const [isClick,setIsClick] = useState([]);
   let drinks = [];
 
-  const getDrinks = (drinksData) => {
-    drinks = [...drinksData];
-    setDrinksState(drinks);
-    console.log(drinks);
-  }
+  const [ctx, setCtx] = useContext(DrinksContext);
 
-  const clickHandler = (click) => {
-    setIsClick(click);
-  }
+  console.log(ctx)
 
   return (
     <div className={styles.main}>
-      <Search sendDrinks={getDrinks} sendClick={clickHandler} />
+      
       {
-        drinksState.map((drink) => {
+        ctx.map((drink) => {
           return(
             <Cocktail
+              array={ctx}
               key={drink.strDrink}
               name={drink.strDrink}
               image={drink.strImageSource}

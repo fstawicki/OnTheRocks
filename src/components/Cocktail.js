@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
 import styles from './Cocktails.module.css';
 import {Link} from 'react-router-dom';
+import DrinksContext from '../context/drinks-context';
+import {useContext} from 'react'
 
 
 function Cocktail(props) {
 
   let drinkName;
+  let drinkspecs = [];
   const [showDetail,setShowDetail] = useState(false);
+  
+
+  const [ctx, setCtx] = useContext(DrinksContext);
+
+  console.log(ctx)
   
       let drinksArray = [
         {ing: props.ing1, meas: props.measure1},
@@ -25,6 +33,7 @@ function Cocktail(props) {
         {ing: props.ing14, meas: props.measure14},
         {ing: props.ing15, meas: props.measure15},
       ];
+
 
       drinksArray.map((drink) => {
         if(drink.ing === ""){
@@ -45,7 +54,6 @@ function Cocktail(props) {
           console.log(drinkName);
         }
       }
-
       
 
   return (
@@ -67,8 +75,15 @@ function Cocktail(props) {
         </ul>
       </div>
       <div className={styles.cocktail__btndiv}>
-        <button onClick={viewDetails} className={styles.cocktail__detailsbtn}>Details</button>
-        {/* <Link onClick={sendDetails} drinkName={drinkName} to="/Details/" className={styles.cocktail__detailsbtn}>Details</Link> */}
+        {/* <button onClick={viewDetails} className={styles.cocktail__detailsbtn}>Details</button> */}
+        <Link 
+        onClick={viewDetails}
+        className={styles.cocktail__detailsbtn}
+        to={{
+          pathname: "/Details/1",
+          allDrinks: props.array
+        }}
+        >Details</Link>
       </div>
     </div>
   )

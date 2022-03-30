@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import {useState} from 'react';
+import DrinksContext from '../context/drinks-context';
 import styles from './Search.module.css';
 
 function Search(props) {
@@ -7,6 +8,9 @@ function Search(props) {
   const [searchbar,setSearchbar] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  
+  const [context, setContext] = useContext(DrinksContext);
+
   
 
 
@@ -30,8 +34,7 @@ function Search(props) {
       const data = await response.json();
       let drinksArray = data.drinks;
       
-      props.sendClick(isClicked);
-      props.sendDrinks(drinksArray);
+      setContext(drinksArray);
       
   }
 

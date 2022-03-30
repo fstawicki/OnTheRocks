@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom';
+import {useLocation, useParams} from 'react-router-dom';
 
 import React from 'react'
 
@@ -6,6 +6,11 @@ import React from 'react'
 function Details(props) {
 
   
+  const location = useLocation();
+  const allDrinks = location.allDrinks;
+  console.log(allDrinks);
+
+
   // const params = useParams();
 
   // let data = [];
@@ -15,7 +20,7 @@ function Details(props) {
 
   // console.log(params.drinkName);
 
-  console.log(props.drinkName);
+  // console.log(props.drinkName);
 
   return (
     <div>Details</div>
