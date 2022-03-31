@@ -7,10 +7,6 @@ import styles from './MainPage.module.css'
 
 function MainPage() {
 
-  const [drinksState,setDrinksState] = useState([]);
-  const [isClick,setIsClick] = useState([]);
-  let drinks = [];
-
   const [ctx, setCtx] = useContext(DrinksContext);
 
   console.log(ctx)

@@ -9,10 +9,10 @@ import Search from "./components/Search";
 
 function App() {
 
-  const [drinksArray, setDrinksArray] = useState([]);
+  const [ctx, setCtx] = useState([]);
 
   return (
-    <DrinksContext.Provider value={[drinksArray,setDrinksArray]}>
+    <DrinksContext.Provider value={[ctx,setCtx]}>
     <div className="App">
       <Navbar />
       <Search />

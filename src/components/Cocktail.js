@@ -12,7 +12,7 @@ function Cocktail(props) {
   const [showDetail,setShowDetail] = useState(false);
   
 
-  const [ctx, setCtx] = useContext(DrinksContext);
+  const {ctx}= useContext(DrinksContext);
 
   console.log(ctx)
   
