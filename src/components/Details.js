@@ -1,6 +1,7 @@
 import {useLocation, useParams} from 'react-router-dom';
+import DrinksContext from '../context/drinks-context';
 
-import React from 'react'
+import React, { useContext, useState } from 'react'
 
 
 function Details(props) {
@@ -8,8 +9,13 @@ function Details(props) {
   
   const location = useLocation();
   const allDrinks = location.allDrinks;
+  const [tmp,setTmp] = useState([]);
   console.log(allDrinks);
 
+  const [ctx] = useContext(DrinksContext);
+
+  setTmp(ctx);
+  console.log(ctx);
 
   // const params = useParams();
 

@@ -9,7 +9,7 @@ function Search(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   
-  const [context, setContext] = useContext(DrinksContext);
+  const [ctx, setCtx] = useContext(DrinksContext);
 
   
 
@@ -34,7 +34,7 @@ function Search(props) {
       const data = await response.json();
       let drinksArray = data.drinks;
       
-      setContext(drinksArray);
+      setCtx(drinksArray);
       
   }
 

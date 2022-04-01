@@ -85,6 +85,28 @@
 }
 
 
+@media (max-width: 1000px){
+    .cocktail{
+        flex-direction: column;
+    }
+
+    .cocktail__image{
+        margin: 1rem auto 0 auto;
+    }
+
+    .cocktail__btndiv,
+    .cocktail__image,
+    .cocktail__info{
+        width: 100%;
+        text-align: center;
+    }
+
+    .cocktail__btndiv{
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+}
+
 
 /* 
 .cocktail{

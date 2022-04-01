@@ -8,13 +8,10 @@ import {useContext} from 'react'
 function Cocktail(props) {
 
   let drinkName;
-  let drinkspecs = [];
   const [showDetail,setShowDetail] = useState(false);
+  const [allDrinks,setAllDrinks] = useState([]);
   
 
-  const {ctx}= useContext(DrinksContext);
-
-  console.log(ctx)
   
       let drinksArray = [
         {ing: props.ing1, meas: props.measure1},
@@ -49,9 +46,10 @@ function Cocktail(props) {
         e.preventDefault();
         let parent = e.target.parentElement.parentElement;
         if(parent.classList.contains(`${styles.cocktail}`)){
-          console.log(parent.id);
           drinkName = parent.id;
           console.log(drinkName);
+          setShowDetail(true);
+          props.sendDetail(drinkName);
         }
       }
       
@@ -75,15 +73,7 @@ function Cocktail(props) {
         </ul>
       </div>
       <div className={styles.cocktail__btndiv}>
-        {/* <button onClick={viewDetails} className={styles.cocktail__detailsbtn}>Details</button> */}
-        <Link 
-        onClick={viewDetails}
-        className={styles.cocktail__detailsbtn}
-        to={{
-          pathname: "/Details/1",
-          allDrinks: props.array
-        }}
-        >Details</Link>
+        <button onClick={viewDetails} className={styles.cocktail__detailsbtn}>Details</button>
       </div>
     </div>
   )
