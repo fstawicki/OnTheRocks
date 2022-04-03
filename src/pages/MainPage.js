@@ -37,7 +37,7 @@ function MainPage(props) {
     <div className={styles.main}>
      
       {noShow && alert('no drinks with that name. Please, enter another name')}
-      {!noShow && <Cocktail />
+      {!noShow && <Cocktail ctx={ctx} />
       //   ctx.map((drink) => {
       //   return(
       //     <Cocktail
