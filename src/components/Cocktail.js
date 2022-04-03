@@ -175,7 +175,6 @@ function Cocktail(props) {
         let parent = e.target.parentElement.parentElement;
         if(parent.classList.contains(`${styles.cocktail}`)){
           drinkName = parent.id;
-          console.log(drinkName);
           setShowDetail(true);
           props.viewDetails(drinkName);
         }
@@ -193,7 +192,7 @@ function Cocktail(props) {
         <ul className={styles.cocktail__ingredients}>{
           drinksArray.map((drink) => {
             if(drink.ing !== null){
-              return <li>{drink.ing}<span className={styles.cocktail__ingredients__measure}>{drink.meas}</span></li>
+              return <li key={Math.random() * (100 - 1) + 1}>{drink.ing}<span className={styles.cocktail__ingredients__measure}>{drink.meas}</span></li>
             }
           })
         }

@@ -11,38 +11,34 @@ import Alert from '../components/Alert';
 function MainPage(props) {
 
   const [viewDetails,setViewDetails] = useState('');
+  const [show,setShow] = useState(false);
 
   const [ctx, setCtx] = useContext(DrinksContext);
 
   
 
-  let show = false;
+  
   if(ctx === null){
-    show = true;
+    setShow(true);
   }
-
-  // console.log(ctx);
-  /*
-  error dodac na search kiedy ctxz jest null - nie ma drinków o takiej nazwiew i wtedy zlikwidsowac noShow
-
-  cocktail przekazuje do main nazwe drinka i conditionali w mainie wyswietlamy detail odpowiedniego drinka
-
-
-
-  */
 
   const getDetail = (drinkName) => {
     setViewDetails(drinkName);
   }
   
+  const getBack = () => {
+    setViewDetails('');
+    setShow(false);
+  }
 
 
   return (
     <Fragment>
       
-    <Search />
+    {viewDetails === '' && <Search />}
     
-    {!show ?
+    {!show ? 
+    
     <div className={styles.main}>
 
 {/*      
@@ -94,7 +90,7 @@ function MainPage(props) {
         )
       }))
     
-      : <Details name={viewDetails} />}
+      : <Details goBack={getBack} name={viewDetails} />}
     
 
     </div>

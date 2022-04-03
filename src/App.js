@@ -14,19 +14,8 @@ function App() {
     <DrinksContext.Provider value={[ctx,setCtx]}>
     <div className="App">
       <Navbar />
-      
-
-      <Switch>
-        <Route path={'/'}exact>
-          <MainPage /> 
-        </Route>
-        <Route path={'/*'}>
-          <div>404</div>
-        </Route>
-      </Switch>
+      <MainPage /> 
       <Footer/>
-
-
     </div>
     </DrinksContext.Provider>
   );
