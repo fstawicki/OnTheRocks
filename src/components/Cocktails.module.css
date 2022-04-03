@@ -81,11 +81,12 @@
     color: white;
     border: 1px solid white;
     background-color: #264a4b;
+    cursor: pointer;
     
 }
 
 
-@media (max-width: 1000px){
+@media (max-width: 1140px){
     .cocktail{
         flex-direction: column;
     }

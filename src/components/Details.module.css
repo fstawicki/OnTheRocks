@@ -1,0 +1,117 @@
+
+
+.details{
+    background-color: rgb(77, 76, 76);
+    border: 2px solid orange;
+    font-family: 'Now';
+
+}
+
+/*utilities*/
+
+.details__spanleft{
+
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    border-bottom: 1px solid #3f7273;
+    margin-top: 0.1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+li, p{
+    font-size: 1.1rem;
+}
+
+/*main */
+
+.details__button button{
+    margin: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    background-color: #3f7273;
+    transition: 0.3s ease;
+    
+
+}
+
+.details__button button:hover{
+    color: white;
+    border: 1px solid white;
+    background-color: #264a4b;
+    cursor: pointer;
+    
+}
+
+.details__name{
+    margin-top: 1.2rem;
+    font-size: 2rem;
+    color: orange;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.details__image{
+    margin: 1rem auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    min-height: 300px;
+    max-width: 300px;
+}
+
+.details__flex{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem;
+
+
+}
+
+.details__flex__left,
+.details__flex__right{
+width: 45%;
+}
+
+h2{
+    margin: 2rem 0 1rem 0;
+    color: orange;
+
+}
+
+.details__flex__right{
+}
+
+.details__instructions{
+
+    margin: 2rem;
+}
+
+
+
+@media (max-width: 950px){
+    .details__flex{
+        flex-direction: column;
+    }
+
+    .details__flex__left,
+    .details__flex__right{
+        width: 100%;
+    }
+
+}
+
+
+
+
+

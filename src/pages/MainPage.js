@@ -1,4 +1,4 @@
-import React, {Fragment, useContext, useState} from 'react'
+import React, {Fragment, useContext, useEffect, useState} from 'react'
 import CocktailsList from '../components/CocktailsList';
 import DrinksContext from '../context/drinks-context';
 import Cocktail from '../components/Cocktail';
@@ -15,21 +15,24 @@ function MainPage(props) {
 
   const [ctx, setCtx] = useContext(DrinksContext);
 
+  useEffect(()=> {
+    if(ctx == [] || ctx == null){
+      setShow(true);
+    }
+  },[ctx])
   
 
   
-  if(ctx === null){
-    setShow(true);
-  }
-
   const getDetail = (drinkName) => {
     setViewDetails(drinkName);
   }
   
-  const getBack = () => {
-    setViewDetails('');
+  const getBack = (quitDetails) => {
+    setViewDetails(quitDetails);
     setShow(false);
   }
+
+  
 
 
   return (

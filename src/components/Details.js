@@ -37,10 +37,6 @@ function Details(props) {
             {ing: drink.strIngredient13, mea: drink.strMeasure13},
             {ing: drink.strIngredient14, mea: drink.strMeasure14},
             {ing: drink.strIngredient15, mea: drink.strMeasure15}],
-            
-          // ingredients: [
-          //   drink.strIngredient1,drink.strIngredient2,drink.strIngredient3,drink.strIngredient4,drink.strIngredient5,drink.strIngredient6,drink.strIngredient7,drink.strIngredient8,drink.strIngredient9,drink.strIngredient10,drink.strIngredient11,drink.strIngredient12,drink.strIngredient13,drink.strIngredient14,drink.strIngredient15],
-          // measures: [drink.strMeasure1,drink.strMeasure2,drink.strMeasure3,drink.strMeasure4,drink.strMeasure5,drink.strMeasure6,drink.strMeasure7,drink.strMeasure8,drink.strMeasure9,drink.strMeasure10,drink.strMeasure11,drink.strMeasure12,drink.strMeasure13,drink.strMeasure14,drink.strMeasure15],
           ing1: drink.strIngredient1,
 ing2: drink.strIngredient2,
 ing3: drink.strIngredient3,
@@ -76,50 +72,44 @@ mea15: drink.strMeasure15,
   });
 
   const goBack = () => {
-    
-    
+    let quitDetails = ''
     setCtx([]);
-    props.goBack('')
+    props.goBack(quitDetails)
   }
   
 
   return (
-    <div>
+    <div className={styles.details}>
       <div className={styles.details__button}>
         <button onClick={goBack}>Go back</button>
       </div>
       <div className={styles.details__name}>
         <h1>{selectedDrink.name}</h1>
       </div>
-      <div className={styles.details__image} style={{
-        backgroundImage: `url(${selectedDrink.image})`
-      }}>
-        </div>
+      <div className={styles.details__image} style={{backgroundImage: `url(${selectedDrink.image})`}}></div>
       <div className={styles.details__flex}>
         <div className={styles.details__flex__left}>
-          <h2 className={styles.details__flex__left__heading}>Ingredients:</h2>
+          <h2 className={styles.details__flex__heading}>Ingredients:</h2>
           <ul>
             {selectedDrink.ingredients.map((ingredient) => {
               if(ingredient.ing != null || ingredient.mea != null){
                 return <li key={Math.random() * (100 - 1) + 1}><span className={styles.details__spanleft}>{ingredient.ing}</span>{ingredient.mea}</li>
-              }
-            })}
-
+              }})}
           </ul>
         </div>
         <div className={styles.details__flex__right}>
+          <h2 className={styles.details__flex__heading}>Basic Information:</h2>
           <ul>
             <li><span className={styles.details__spanleft}>Category:</span>{selectedDrink.category}</li>
             <li><span className={styles.details__spanleft}>Alcoholic/Non-Alcoholic:</span>{selectedDrink.isalcoholic}</li>
             <li><span className={styles.details__spanleft}>Preferable glass:</span>{selectedDrink.glass}</li>
           </ul>
         </div>
-        <div className={styles.details__instructions}>
-          <p>
-            {selectedDrink.instruction}
-          </p>
-        </div>
       </div>
+      <div className={styles.details__instructions}>
+          <h2>Instruction:</h2>
+          <p>{selectedDrink.instruction}</p>
+        </div>
     </div>
     
     )
