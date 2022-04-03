@@ -6,30 +6,88 @@ import React, { useContext, useState } from 'react'
 
 function Details(props) {
 
+  const [ctx,setCtx] = useContext(DrinksContext);
+
+  let selectedDrink = {};
+  ctx.map((drink) => {
+      if(drink.strDrink === props.name){
+       return selectedDrink = {
+          key: drink.idDrink,
+          name: drink.strDrink,
+          image: drink.strDrinkThumb,
+          instruction: drink.strInstructions,
+          glass: drink.strGlass,
+          ing1: drink.strIngredient1,
+          ing2: drink.strIngredient2,
+          ing3: drink.strIngredient3,
+          ing4: drink.strIngredient4,
+          ing5: drink.strIngredient5,
+          ing6: drink.strIngredient6,
+          ing7: drink.strIngredient7,
+          ing8: drink.strIngredient8,
+          ing9: drink.strIngredient9,
+          ing10: drink.strIngredient10,
+          ing11: drink.strIngredient11,
+          ing12: drink.strIngredient12,
+          ing13: drink.strIngredient13,
+          ing14: drink.strIngredient14,
+          ing15: drink.strIngredient15,
+          mea1: drink.strMeasure1,
+          mea2: drink.strMeasure2,
+          mea3: drink.strMeasure3,
+          mea4: drink.strMeasure4,
+          mea5: drink.strMeasure5,
+          mea6: drink.strMeasure6,
+          mea7: drink.strMeasure7,
+          mea8: drink.strMeasure8,
+          mea9: drink.strMeasure9,
+          mea10: drink.strMeasure10,
+          mea11: drink.strMeasure11,
+          mea12: drink.strMeasure12,
+          mea13: drink.strMeasure13,
+          mea14: drink.strMeasure14,
+          mea15: drink.strMeasure15,
+        }
+      }
+  });
+
+  console.log(selectedDrink);
+
+  const goBack = () => {
+    
+    setCtx(null);
+  }
   
-  const location = useLocation();
-  const allDrinks = location.allDrinks;
-  const [tmp,setTmp] = useState([]);
-
-  const [ctx] = useContext(DrinksContext);
-
-  setTmp(ctx);
-  console.log(ctx);
-
-  // const params = useParams();
-
-  // let data = [];
-  // let drinkID = 1;
-
-  // const drinkInfo = data.find(drink => drinkID === params.drinkID);
-
-  // console.log(params.drinkName);
-
-  // console.log(props.drinkName);
 
   return (
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aut numquam distinctio illum laudantium mollitia dolor maiores id quia reiciendis. Magnam eveniet minima iure hic aspernatur dolorem cum, deleniti at aut. Ad doloribus, ipsum illum ratione itaque quae hic dolores suscipit, voluptate consequatur voluptates ipsa optio corrupti modi voluptatem quidem sunt exercitationem amet vitae! Voluptas nesciunt maiores provident assumenda placeat facilis dignissimos, repellat minima? Quasi quo dignissimos ducimus, vero sint voluptate amet cupiditate harum, aut natus sapiente recusandae nemo placeat numquam similique asperiores magnam eum modi odio cum dicta culpa soluta inventore! Nemo cupiditate reprehenderit, quo a quidem maiores, molestiae beatae minima libero illum fuga perferendis repudiandae asperiores hic consequatur voluptas expedita animi, ad praesentium harum. Quo omnis quas esse sed dolorem harum distinctio totam ullam tempore quaerat dicta corrupti reprehenderit incidunt assumenda placeat, rerum asperiores dignissimos et reiciendis? Unde, qui praesentium. Animi laboriosam tempore rem amet aut, doloremque distinctio ab officiis dolorem tenetur. Quis animi harum enim tempora rem. Rem, odit cum id ab, perspiciatis sequi eligendi tempore deleniti commodi provident molestias dolorem officia eaque, fugiat dolorum ut at! Quod, nesciunt recusandae. Esse nostrum ullam laudantium aspernatur recusandae? Officiis deleniti blanditiis odio, itaque ratione fugiat vitae rerum? Nemo perspiciatis nihil quis explicabo aliquam! Consequatur, rem. Minima cum, deserunt animi earum molestiae iusto aliquid odio commodi possimus? Unde repellat sed quia, reprehenderit magnam assumenda dolorum architecto veniam optio repellendus sunt rerum. Dolorum quia totam ipsam quidem consequuntur iure architecto praesentium illo quibusdam aspernatur, id, debitis minus, asperiores iste odio. Totam magnam modi quo! Saepe eaque dolor quasi repudiandae deleniti totam expedita facilis aliquid cupiditate reprehenderit nulla sit asperiores beatae non veritatis cum et eveniet, recusandae fugit maiores debitis illo perspiciatis nesciunt temporibus. Aperiam nostrum autem quas neque hic consequatur, officia magni est, perferendis, magnam praesentium. Facere voluptate ipsam nemo iste.</div>
-  )
+    <div>
+      <div className={styles.details__button}>
+        <button onClick={goBack}>Go back</button>
+      </div>
+      <div className={styles.details__name}>
+        <h1>{selectedDrink.name}</h1>
+      </div>
+      <div className={styles.details__image}>
+        //image
+      </div>
+      <div className={styles.details__flex}>
+        <div className="details__flex__left">
+          <ul>
+
+          </ul>
+        </div>
+        <div className="details__flex__right">
+          <ul>
+
+          </ul>
+        </div>
+        <div className={styles.details__instructions}>
+
+        </div>
+      </div>
+    </div>
+    
+    )
 }
 
 export default Details

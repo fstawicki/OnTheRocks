@@ -14,7 +14,7 @@ function App() {
     <DrinksContext.Provider value={[ctx,setCtx]}>
     <div className="App">
       <Navbar />
-      <Search/>
+      
 
       <Switch>
         <Route path={'/'}exact>

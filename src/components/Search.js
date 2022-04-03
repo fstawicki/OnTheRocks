@@ -1,5 +1,6 @@
-import React, { Fragment, useContext } from 'react';
-import {useState} from 'react';
+import React, { useState, Fragment, useContext } from 'react';
+import Alert from './Alert';
+
 import DrinksContext from '../context/drinks-context';
 import styles from './Search.module.css';
 
@@ -7,39 +8,50 @@ function Search(props) {
 
   const [searchbar,setSearchbar] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isTouched, setIsTouched] = useState('');
   const [isClicked, setIsClicked] = useState(false);
   
   const [ctx, setCtx] = useContext(DrinksContext);
 
-  
-
-
   const searchbarHandler = (e) => {
     setSearchbar(e.target.value);
+    setIsTouched('');
   }
 
   const buttonHandler = () => {
-    setIsClicked(true);
+    
   }
 
 
 
   async function submitHandler(e){
     e.preventDefault();
+    if(searchbar === ''){
+      setIsTouched('Please enter a drink name');
+      return;
+    }
+    
     const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchbar}`);
     if(response.status !== 200){
       console.log('nie');
       return;
     }
       const data = await response.json();
+      if(data === null){
+        setIsTouched('No drinks for this search. Please enter other drink name')
+        return;
+      }
       let drinksArray = data.drinks;
       
+      
       setCtx(drinksArray);
+      setIsTouched('');
       
   }
 
 
   return (
+    <Fragment>
     <div className={styles.search}>
         <form className={styles.search__form} onSubmit={submitHandler}>
         <input type="text" className={styles.search__searchbar} onChange={searchbarHandler} value={searchbar} />
@@ -48,6 +60,8 @@ function Search(props) {
         {isLoading && <div className={styles.search__loadingText}><p>Searching, please wait...</p></div>}
 
     </div>
+    {!isTouched == '' && <Alert msg={isTouched} />}
+    </Fragment>
   )
 }
 
