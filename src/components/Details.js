@@ -1,9 +1,6 @@
-import {useLocation, useParams} from 'react-router-dom';
 import DrinksContext from '../context/drinks-context';
-
 import styles from './Details.module.css'
-
-import React, { useContext, useState } from 'react'
+import React, { useContext} from 'react'
 
 
 function Details(props) {
@@ -41,9 +38,17 @@ function Details(props) {
       }
   });
 
+//removes unwanted empty ingredients from object
+  selectedDrink.ingredients.map((ingredient) => {
+    if(ingredient.ing === ""){
+      ingredient.ing = null;
+      ingredient.mea = null;
+    }
+  });
+
   const goBack = () => {
-    let quitDetails = ''
-    setCtx([]);
+    let quitDetails = '';
+    // setCtx([]);
     props.goBack(quitDetails)
   }
   
