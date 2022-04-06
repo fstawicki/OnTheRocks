@@ -49,7 +49,7 @@ function Details(props) {
   const goBack = () => {
     let quitDetails = '';
     // setCtx([]);
-    props.goBack(quitDetails)
+    props.goBack(quitDetails);
   }
   
 
@@ -76,7 +76,7 @@ function Details(props) {
           <h2 className={styles.details__flex__heading}>Basic Information:</h2>
           <ul>
             <li><span className={styles.details__spanleft}>Category:</span>{selectedDrink.category}</li>
-            <li><span className={styles.details__spanleft}>Alcoholic/Non-Alcoholic:</span>{selectedDrink.isalcoholic}</li>
+            <li><span className={styles.details__spanleft}>Alcoholic / Non-Alcoholic:</span>{selectedDrink.isalcoholic}</li>
             <li><span className={styles.details__spanleft}>Preferable glass:</span>{selectedDrink.glass}</li>
           </ul>
         </div>

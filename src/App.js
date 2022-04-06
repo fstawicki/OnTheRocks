@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar";
 import MainPage from "./pages/MainPage";
 import DrinksContext from "./context/drinks-context";
 import { useState } from "react";
-import Search from "./components/Search";
 
 function App() {
 
@@ -12,7 +11,6 @@ function App() {
     <DrinksContext.Provider value={[ctx,setCtx]}>
     <div className="App">
       <Navbar />
-      <Search />
       <MainPage /> 
     </div>
     </DrinksContext.Provider>

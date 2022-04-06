@@ -1,9 +1,10 @@
-import React, {Fragment, useContext, useState} from 'react'
+import React, {Fragment, useContext,useState} from 'react'
 import DrinksContext from '../context/drinks-context';
 import Cocktail from '../components/Cocktail';
 
 import styles from './MainPage.module.css'
 import Details from '../components/Details';
+import Search from '../components/Search';
 import Alert from '../components/Alert';
 
 function MainPage(props) {
@@ -22,9 +23,14 @@ function MainPage(props) {
     setShow(false);
   }
 
+  
+
+
   return (
     <Fragment>
       
+    {viewDetails === '' && <Search />}
+    
     {!show ? 
     
     <div className={styles.main}>

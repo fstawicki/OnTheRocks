@@ -1,8 +1,7 @@
 import React from 'react'
 
 const DrinksContext = React.createContext({
-    ctx: [],
-    name: 'vodka'
+    ctx: []
 });
 
 export default DrinksContext;
