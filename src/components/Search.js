@@ -36,11 +36,13 @@ function Search(props) {
         return;
       }
       let drinksArray = data.drinks;
-      
+    if(drinksArray){
       setCtx(drinksArray);
       setIsTouched('');
-  }
 
+  }
+}
+      
   async function submitHandlerRandom (e) {
     e.preventDefault();
     const URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
