@@ -5,13 +5,7 @@
     align-items: center;
     flex-direction: column;
 
-    margin: 3rem 0;
-}
-
-
-
-.search__form{
-    
+    margin: 1rem 0;
 }
 
 .search__searchbar{
@@ -26,6 +20,7 @@
 
 .search__searchbtn{
     padding: 0.5rem 1.5rem;
+    
     font-size: 1.1rem;
     background-color: orange;
     border: 1px solid #ffa500;
@@ -40,7 +35,23 @@
 }
 
 
-.search__loadingText{
-    margin-top: 2rem;
-    color: #ffa500;
+@media (max-width: 450px){
+
+    .search__form{
+        flex-direction: column;
+    }
+
+    .search__searchbar{
+        margin-bottom: 1rem ;
+    }
+
+    .search__searchbar,
+    .search__searchbtn{
+        width: 100%;
+    }
+
+    .search__form{
+        width: 80%;
+    }
+
 }

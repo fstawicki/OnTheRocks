@@ -68,7 +68,7 @@ function Search(props) {
     </div>
     <div className={styles.search}>
     <form className={styles.search__form} onSubmit={submitHandlerRandom}>
-      <button type="submit" className={styles.search__searchbtn}>Get Random Cocktail</button>
+      <button type="submit" className={styles.search__searchbtn}>Random Cocktail</button>
     </form>
     </div>
     {!isTouched == '' && <Alert msg={isTouched} />}

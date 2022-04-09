@@ -12,6 +12,10 @@
 .details__spanleft{
 
 }
+*{
+    white-space: pre-wrap; /* Dla normalnych przeglądarek */
+    word-wrap: break-word; /* Dla IE<9 */
+}
 
 ul{
     list-style: none;
@@ -92,6 +96,10 @@ h2{
 .details__flex__right{
 }
 
+.details__spanleft{
+    margin: 0.1rem 0.2rem;
+}
+
 .details__instructions{
 
     margin: 2rem;
@@ -111,6 +119,9 @@ h2{
 
 }
 
+@media(max-width: 450px){
+
+}
 
 
 
