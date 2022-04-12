@@ -4,4 +4,4 @@ During app creation I used mainly React and CSS Modules. In code I used solution
 
 You can visit On the rocks website at:
 
-https://www.on-the-rocks.netlify.app/
+https://on-the-rocks.netlify.app/
