@@ -12,24 +12,24 @@
 .details__spanleft{
 
 }
-*{
-    white-space: pre-wrap; /* Dla normalnych przeglądarek */
-    word-wrap: break-word; /* Dla IE<9 */
-}
 
-ul{
+.list{
     list-style: none;
 }
 
-li{
+.list_item{
     border-bottom: 1px solid #3f7273;
     margin-top: 0.1rem;
     display: flex;
     justify-content: space-between;
 }
 
-li, p{
+.list_item, .details__instructions__para{
     font-size: 1.1rem;
+}
+
+.list_item,.details__instructions__para,h1,h2{
+    word-wrap: break-word; /* Dla IE<9 */
 }
 
 /*main */
@@ -40,7 +40,7 @@ li, p{
     text-transform: uppercase;
     color: black;
     padding: 1rem 2rem;
-    border: 1px solid black;
+    border: 1px solid transparent;
     background-color: #3f7273;
     transition: 0.3s ease;
     
@@ -48,11 +48,9 @@ li, p{
 }
 
 .details__button button:hover{
-    color: white;
-    border: 1px solid white;
-    background-color: #264a4b;
+    border: 1px solid orange;
+    background-color: orange;
     cursor: pointer;
-    
 }
 
 .details__name{
@@ -87,10 +85,10 @@ li, p{
 width: 45%;
 }
 
-h2{
+
+.details__flex__heading{
     margin: 2rem 0 1rem 0;
     color: orange;
-
 }
 
 .details__flex__right{
@@ -98,6 +96,10 @@ h2{
 
 .details__spanleft{
     margin: 0.1rem 0.2rem;
+}
+
+.details__spanright{
+    text-align: right;
 }
 
 .details__instructions{
@@ -119,10 +121,9 @@ h2{
 
 }
 
-@media(max-width: 450px){
+@media(max-width: 550px){
+    .details__name{
+        font-size: 1.5rem;
+    }
 
 }
-
-
-
-

@@ -65,25 +65,25 @@ function Details(props) {
       <div className={styles.details__flex}>
         <div className={styles.details__flex__left}>
           <h2 className={styles.details__flex__heading}>Ingredients:</h2>
-          <ul>
+          <ul className={styles.list}>
             {selectedDrink.ingredients.map((ingredient) => {
               if(ingredient.ing != null || ingredient.mea != null){
-                return <li key={Math.random() * (100 - 1) + 1}><span className={styles.details__spanleft}>{ingredient.ing}</span>{ingredient.mea}</li>
+                return <li className={styles.list_item} key={Math.random() * (100 - 1) + 1}><span className={styles.details__spanleft}>{ingredient.ing}</span><span className={styles.details__spanright}>{ingredient.mea}</span></li>
               }})}
           </ul>
         </div>
         <div className={styles.details__flex__right}>
           <h2 className={styles.details__flex__heading}>Basic Information:</h2>
-          <ul>
-            <li><span className={styles.details__spanleft}>Category:</span>{selectedDrink.category}</li>
-            <li><span className={styles.details__spanleft}>Alcoholic / Non-Alcoholic:</span>{selectedDrink.isalcoholic}</li>
-            <li><span className={styles.details__spanleft}>Preferable glass:</span>{selectedDrink.glass}</li>
+          <ul className={styles.list}>
+            <li className={styles.list_item}><span className={styles.details__spanleft}>Category:</span><span className={styles.details__spanright}>{selectedDrink.category}</span></li>
+            <li className={styles.list_item}><span className={styles.details__spanleft}>Alcoholic / Non-Alcoholic:</span><span className={styles.details__spanright}>{selectedDrink.isalcoholic}</span></li>
+            <li className={styles.list_item}><span className={styles.details__spanleft}>Preferable glass:</span><span className={styles.details__spanright}>{selectedDrink.glass}</span></li>
           </ul>
         </div>
       </div>
       <div className={styles.details__instructions}>
-          <h2>Instruction:</h2>
-          <p>{selectedDrink.instruction}</p>
+          <h2 className={styles.details__flex__heading}>Instruction:</h2>
+          <p className={styles.details__instructions__para}>{selectedDrink.instruction}</p>
         </div>
     </div>
     

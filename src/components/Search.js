@@ -43,7 +43,7 @@ function Search(props) {
   }
 }
       
-  async function submitHandlerRandom (e) {
+  const submitHandlerRandom = async (e) => {
     e.preventDefault();
     const URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
     const response = await fetch(URL);

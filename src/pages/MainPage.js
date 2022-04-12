@@ -22,10 +22,7 @@ function MainPage(props) {
     setViewDetails(quitDetails);
     setShow(false);
   }
-
   
-
-
   return (
     <Fragment>
       
@@ -35,8 +32,6 @@ function MainPage(props) {
     
     <div className={styles.main}>
 
-{/*      
-      {noShow && alert('no drinks with that name. Please, enter another name')} */}
       {viewDetails === '' ?
         (
         ctx.map((drink) => {
@@ -45,7 +40,7 @@ function MainPage(props) {
             viewDetails={getDetail}
             key={drink.strDrink}
             name={drink.strDrink}
-            image={drink.strImageSource}
+            image={drink.strDrinkThumb}
             isAlcoholic={drink.strAlcoholic}
             category={drink.strCategory}
             glass={drink.strGlass}
